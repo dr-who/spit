@@ -9,4 +9,4 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 override_dh_auto_build:
 	cmake .
-	make
+	dh_auto_build $@

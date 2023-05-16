@@ -35,106 +35,15 @@ add_library(spitlib STATIC positions.c devices.c utils.c diskStats.c logSpeed.c 
 add_executable(spit spit.c spit-version.h)
 target_link_libraries(spit spitlib m aio pthread numa)
 
-add_executable(snackrec netrec.c transfer.h)
-target_link_libraries(snackrec spitlib m aio pthread numa pci)
-
-add_executable(snacksend netsend.c transfer.h)
-target_link_libraries(snacksend )
-
-add_executable(numListTest numListTest.c)
-target_link_libraries(numListTest spitlib m aio pthread numa)
-
-add_executable(pair pair.c )
-target_link_libraries(pair spitlib m )
-
-add_executable(stush stush.c)
-target_link_libraries(stush spitlib m pthread aio numa readline)
-
-set_target_properties(stush PROPERTIES EXCLUDE_FROM_ALL TRUE)
-
-add_executable(stat stat.c )
-target_link_libraries(stat spitlib m )
-
-add_executable(diskperf diskperf.c)
-target_link_libraries(diskperf spitlib m aio pthread numa)
-
-add_executable(diskpoll diskpoll.c)
-target_link_libraries(diskpoll spitlib m aio pthread numa)
-
-add_executable(diskserial diskserial.c)
-target_link_libraries(diskserial spitlib m aio pthread numa)
-
-add_executable(pmemwreck pmemwreck.c)
-target_link_libraries(pmemwreck spitlib m aio pthread numa)
-
-add_executable(xorrupt xorrupt.c)
-target_link_libraries(xorrupt spitlib m aio pthread numa)
-
-add_executable(entropy entropy.c)
-target_link_libraries(entropy m)
-
-add_executable(randdd randdd.c)
-target_link_libraries(randdd spitlib m aio pthread numa)
-
-add_executable(trim trim.c)
-target_link_libraries(trim spitlib m aio pthread numa)
-
-add_executable(median2d median2d.c)
-target_link_libraries(median2d spitlib m)
-
-add_executable(fsfiller fsfiller.c)
-target_link_libraries(fsfiller spitlib m aio pthread numa)
-
 add_executable(spitchecker verify.c)
 target_link_libraries(spitchecker spitlib m aio pthread numa)
 
 add_executable(spitchecker2 bv2.c)
 target_link_libraries(spitchecker2 spitlib m aio pthread numa )
 
-add_executable(positionLoader positionLoader.c)
-target_link_libraries(positionLoader spitlib m aio pthread numa)
-
-add_executable(raidcorrupt raidcorrupt.c)
-target_link_libraries(raidcorrupt spitlib m aio pthread numa)
-
-add_executable(devcontents devcontents.c sha-256.c)
-target_link_libraries(devcontents spitlib m aio pthread numa)
-
-add_executable(bdinfo bdinfo.c)
-target_link_libraries(bdinfo spitlib m aio pthread numa)
-
-add_executable(dtest directories.c)
-target_link_libraries(dtest spitlib m aio pthread numa)
-
-add_executable(hist hist.c)
-target_link_libraries(hist spitlib m numa)
-
-add_executable(montehist montehist.c)
-target_link_libraries(montehist spitlib m numa pthread numa aio)
-
-add_executable(genpw genpw.c)
-target_link_libraries(genpw spitlib m numa pthread numa aio)
-
-add_executable(genpositions genpositions.c)
-target_link_libraries(genpositions spitlib m aio pthread numa)
-
-
-#add_executable(testpositions testpositions.c)
-#target_link_libraries(testpositions spitlib m pthread aio)
-
-add_executable(testDiskStats testDiskStats.c)
-target_link_libraries(testDiskStats spitlib m numa pthread)
-
-
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/spit.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
 
-install(TARGETS spit fsfiller spitchecker raidcorrupt bdinfo dtest hist  DESTINATION bin)
-
-install(TARGETS stush PERMISSIONS SETUID WORLD_EXECUTE DESTINATION bin )
-
-# first check the position validation/collision collapsing is working
-#add_test(tds testDiskStats)
-
+install(TARGETS spit spitchecker DESTINATION bin)
 
 add_test(testnumList numListTest)
 add_test(testspitHelp  spit -h)

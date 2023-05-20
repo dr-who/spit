@@ -1,7 +1,12 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
 
 include /usr/share/dpkg/architecture.mk
 
+export DEB_LDFLAGS_MAINT_PREPEND := -Wl,-z,defs
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
@@ -9,4 +14,8 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 override_dh_auto_build:
 	cmake .
-	dh_auto_build $@
+	dh_auto_build
+
+# need to enable tests at some point
+override_dh_auto_test:
+

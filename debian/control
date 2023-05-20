@@ -4,10 +4,10 @@ Priority: optional
 Maintainer: Brian T. Smith <bsmith@systemfabricworks.com>
 Uploaders: Brian T. Smith <bsmith@systemfabricworks.com>
 Build-Depends: debhelper-compat (= 12),
-  libaio-dev,
-  libpci-dev,
-  libnuma-dev,
-  cmake
+ libaio-dev,
+ libpci-dev,
+ libnuma-dev,
+ cmake
 Rules-Requires-Root: no
 Standards-Version: 4.6.1
 Homepage: https://github.com/dr-who/spit
@@ -18,6 +18,6 @@ Package: spit
 Architecture: linux-any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Stu's Powerful I/O Tester
-  Tools for generating SNIA (Storage Networking Industry Association) compatible
-  benchmarking.
+ Tools for generating SNIA (Storage Networking Industry Association) compatible
+ benchmarking.
 

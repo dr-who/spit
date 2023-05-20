@@ -2,9 +2,6 @@ cmake_minimum_required (VERSION 3.0)
 project (stutools)
 
 get_directory_property(hasParent PARENT_DIRECTORY)
-if(NOT hasParent)
-  include( ${CMAKE_CURRENT_SOURCE_DIR}/../utils/Version.cmake)
-endif()
 
 execute_process(COMMAND git describe --tags
     OUTPUT_VARIABLE GIT_REV

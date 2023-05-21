@@ -4,7 +4,4 @@ project (stutools C)
 enable_testing()
 
 add_subdirectory(spit)
-add_subdirectory(report)
-
-
 

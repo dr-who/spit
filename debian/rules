@@ -23,6 +23,26 @@ endif
 
 override_dh_clean:
 	dh_clean
-	$(RM) -r CMakeCache.txt CMakeFiles CTestTestfile.cmake Makefile cmake_install.cmake \
-        obj-*/ spit/CMakeFiles spit/CTestTestfile.cmake spit/DartConfiguration.tcl \
-        spit/Makefile spit/cmake_install.cmake spit/spit-version.h
+	$(RM) -r CMakeCache.txt \
+		CMakeFiles \
+		cmake_install.cmake \
+		CTestTestfile.cmake \
+		Makefile \
+		obj-*/ \
+		spit/CMakeFiles \
+		spit/cmake_install.cmake \
+		spit/CTestTestfile.cmake \
+		spit/DartConfiguration.tcl \
+		spit/Makefile \
+		spit/size_vs_latency.gnu \
+		spit/size_vs_latency_r.txt \
+		spit/size_vs_latency_w.txt \
+		spit/spit-latency-histogram-read.gnu \
+		spit/spit-latency-histogram-read.txt \
+		spit/spit-latency-histogram-write.gnu \
+		spit/spit-latency-histogram-write.txt \
+		spit/spit-version.h \
+		spit/time_vs_latency.gnu \
+		spit/t_vs_lat.txt \
+		spit/wow*
+

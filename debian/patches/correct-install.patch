@@ -1,6 +1,6 @@
 --- a/spit/CMakeLists.txt
 +++ b/spit/CMakeLists.txt
-@@ -32,11 +32,6 @@
+@@ -47,11 +47,6 @@
  add_executable(pair pair.c )
  target_link_libraries(pair spitlib m )
  
@@ -12,7 +12,7 @@
  add_executable(stat stat.c )
  target_link_libraries(stat spitlib m )
  
-@@ -111,11 +106,9 @@
+@@ -126,11 +121,9 @@
  target_link_libraries(testDiskStats spitlib m numa pthread)
  
  

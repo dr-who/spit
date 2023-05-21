@@ -20,3 +20,9 @@ override_dh_auto_test:
     ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	dh_auto_test -O--buildsystem=cmake -O--no-parallel
 endif
+
+override_dh_clean:
+	dh_clean
+	$(RM) -r CMakeCache.txt CMakeFiles CTestTestfile.cmake Makefile cmake_install.cmake \
+        obj-*/ spit/CMakeFiles spit/CTestTestfile.cmake spit/DartConfiguration.tcl \
+        spit/Makefile spit/cmake_install.cmake spit/spit-version.h

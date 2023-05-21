@@ -46,9 +46,9 @@ target_link_libraries(spitchecker2 spitlib m aio pthread numa )
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/spit.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/spitchecker.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
 
-# first check the position validation/collision collapsing is working
 install(TARGETS spit spitchecker DESTINATION bin)
 
+# first check the position validation/collision collapsing is working
 add_test(testnumList numListTest)
 add_test(testPositionTest positionTest)
 add_test(testspitHelp  spit -h)

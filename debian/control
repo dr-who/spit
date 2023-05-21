@@ -1,7 +1,8 @@
 Source: spit
-Section: misc
+Section: utils
 Priority: optional
-Maintainer: Brian T. Smith <bsmith@systemfabricworks.com>
+Maintainer: Stuart Inglis <stuart.inglis@gmail.com>
+Uploaders: Brian T. Smith <bsmith@systemfabricworks.com>
 Build-Depends: debhelper-compat (= 12),
  libaio-dev,
  libpci-dev,

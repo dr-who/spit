@@ -16,10 +16,7 @@ override_dh_auto_build:
 	cmake .
 	dh_auto_build
 
-ifdef SPIT_DISABLE_TESTS
 override_dh_auto_test:
-
-else
-override_dh_auto_test:
+    ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	dh_auto_test -O--buildsystem=cmake -O--no-parallel
 endif

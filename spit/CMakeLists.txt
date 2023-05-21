@@ -43,49 +43,12 @@ target_link_libraries(spitchecker spitlib m aio pthread numa)
 add_executable(spitchecker2 bv2.c)
 target_link_libraries(spitchecker2 spitlib m aio pthread numa )
 
-add_executable(positionLoader positionLoader.c)
-target_link_libraries(positionLoader spitlib m aio pthread numa)
-
-add_executable(raidcorrupt raidcorrupt.c)
-target_link_libraries(raidcorrupt spitlib m aio pthread numa)
-
-add_executable(devcontents devcontents.c sha-256.c)
-target_link_libraries(devcontents spitlib m aio pthread numa)
-
-add_executable(bdinfo bdinfo.c)
-target_link_libraries(bdinfo spitlib m aio pthread numa)
-
-add_executable(dtest directories.c)
-target_link_libraries(dtest spitlib m aio pthread numa)
-
-add_executable(hist hist.c)
-target_link_libraries(hist spitlib m numa)
-
-add_executable(montehist montehist.c)
-target_link_libraries(montehist spitlib m numa pthread numa aio)
-
-add_executable(genpw genpw.c)
-target_link_libraries(genpw spitlib m numa pthread numa aio)
-
-add_executable(genpositions genpositions.c)
-target_link_libraries(genpositions spitlib m aio pthread numa)
-
-
-#add_executable(testpositions testpositions.c)
-#target_link_libraries(testpositions spitlib m pthread aio)
-
-add_executable(testDiskStats testDiskStats.c)
-target_link_libraries(testDiskStats spitlib m numa pthread)
-
-
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/spit.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/spitchecker.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
 
 install(TARGETS spit spitchecker  DESTINATION bin)
 
 # first check the position validation/collision collapsing is working
-#add_test(tds testDiskStats)
-
 
 add_test(testnumList numListTest)
 add_test(testPositionTest positionTest)

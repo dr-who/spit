@@ -1,3 +1,0 @@
-
-#define BUFFSIZE (1024*1024)
-

@@ -37,9 +37,6 @@ target_link_libraries(positionTest spitlib m aio pthread numa )
 add_executable(numListTest numListTest.c)
 target_link_libraries(numListTest spitlib m aio pthread numa)
 
-add_executable(positionTest positionTest.c)
-target_link_libraries(positionTest spitlib m aio pthread numa )
-
 add_executable(spitchecker verify.c)
 target_link_libraries(spitchecker spitlib m aio pthread numa)
 

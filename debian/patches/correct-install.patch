@@ -1,19 +1,21 @@
 Description: Correct install target logic
 Corrects the install target logic. Currently, this is:
- - Install man page under /usr/share/man/man1
+ - Install man pages under /usr/share/man/man1
 Author: Brian T. Smith <bsmith@systemfabricworks.com>
 Forwarded: not-needed
-Last-Update: <2023-05-21>
+Last-Update: <2023-05-29>
 ---
 This patch header follows DEP-3: https://dep-team.pages.debian.net/deps/dep3/
 --- a/spit/CMakeLists.txt
 +++ b/spit/CMakeLists.txt
-@@ -41,7 +41,7 @@
+@@ -43,8 +43,8 @@
  add_executable(spitchecker2 bv2.c)
  target_link_libraries(spitchecker2 spitlib m aio pthread numa )
  
 -INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/spit.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
+-INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/spitchecker.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
 +INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/spit.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
++INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/spitchecker.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
  
- install(TARGETS spit DESTINATION bin)
+ install(TARGETS spit spitchecker  DESTINATION bin)
  

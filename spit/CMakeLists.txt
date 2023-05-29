@@ -31,6 +31,9 @@ add_library(spitlib STATIC positions.c devices.c utils.c diskStats.c logSpeed.c 
 add_executable(spit spit.c spit-version.h)
 target_link_libraries(spit spitlib m aio pthread numa)
 
+add_executable(positionTest positionTest.c)
+target_link_libraries(positionTest spitlib m aio pthread numa )
+
 add_executable(numListTest numListTest.c)
 target_link_libraries(numListTest spitlib m aio pthread numa)
 

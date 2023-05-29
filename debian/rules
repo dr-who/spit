@@ -45,4 +45,3 @@ override_dh_clean:
 		spit/time_vs_latency.gnu \
 		spit/t_vs_lat.txt \
 		spit/wow*
-

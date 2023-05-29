@@ -18,6 +18,20 @@ Package: spit
 Architecture: linux-any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Stu's Powerful I/O Tester
- Tools for generating SNIA (Storage Networking Industry Association) compatible
- benchmarking.
-
+ Spit is a comprehensive tool designed for testing block devices and
+ file systems. It offers a robust suite of testing capabilities including
+ latency tests, speed tests, and multi-threaded conflict resolution tests.
+ .
+ It's particularly useful for validating system performance and reliability,
+ with features specifically designed to test Non-Uniform Memory Access (NUMA)
+ actions, caches, read-ahead and action ordering. This functionality helps in
+ identifying and resolving issues that might arise in custom block devices and
+ file systems.
+ .
+ Spit also supports decoupling of writes from verification, allowing
+ system reboots in between, which is crucial for system resilience
+ testing.
+ .
+ This makes spit an indispensable tool for system administrators, developers,
+ and performance engineers looking to evaluate and improve system performance
+ and stability.
